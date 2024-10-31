@@ -22,6 +22,9 @@ public class BookStore {
      */
     private double pricePython = 60000.0;
 
+    public static final double DISCOUNT_RATE = 0.05; // Diskon 5%
+    public static final int DISCOUNT_THRESHOLD = 5; // Diskon jika beli 5 buku atau lebih
+
     /**
      * Menampilkan daftar buku yang tersedia beserta harga masing-masing.
      */
@@ -30,7 +33,16 @@ public class BookStore {
         System.out.println("2. Buku Python - Rp" + pricePython);
     }
 
-    /**
+    public double calculateTotalWithDiscount(double price, int quantity) {
+        double total = price * quantity;
+        if (quantity >= DISCOUNT_THRESHOLD) {
+            total -= total * DISCOUNT_RATE; // Terapkan diskon
+        }
+        return total * (1 + TAX_RATE); // Tambahkan pajak
+    }
+}
+
+/**
      * Mendapatkan harga buku berdasarkan pilihan pengguna.
      *
      * @param choice Nomor buku yang dipilih (1 untuk Java, 2 untuk Python).
