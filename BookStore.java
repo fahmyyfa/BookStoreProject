@@ -40,9 +40,9 @@ public class BookStore {
         }
         return total * (1 + TAX_RATE); // Tambahkan pajak
     }
-}
 
-/**
+
+    /**
      * Mendapatkan harga buku berdasarkan pilihan pengguna.
      *
      * @param choice Nomor buku yang dipilih (1 untuk Java, 2 untuk Python).

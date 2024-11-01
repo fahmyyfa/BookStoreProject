@@ -13,6 +13,8 @@ public class Main {
      * @param args Argumen baris perintah.
      */
     public static void main(String[] args) {
+        System.out.println("a");
+
         Scanner scanner = new Scanner(System.in);
         BookStore bookStore = new BookStore();
 
